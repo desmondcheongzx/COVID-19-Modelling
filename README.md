@@ -22,10 +22,11 @@ As for the population data, The UN is the foremost source on country statistics 
 
 #### How did you generate the sample? Is it comparably small or large? Is it representative or is it likely to exhibit some kind of sampling bias?
 
-This project does not really involve any sort of sampling. The data we get (number of infections) pertains to the whole population. In fact, a big part of our data is solely population numbers. 
+This project does not really involve any sort of sampling. The COVID-19 data we get (number of infections, deaths, and recovered) pertains to the global population and is consistently updated. Additionally, a big part of our data is solely population numbers to help us obtain the number of susceptible individuals 
 
 #### Are there any other considerations you took into account when collecting your data? This is open-ended based on your data; feel free to leave this blank. (Example: If it's user data, is it public/are they consenting to have their data used? Is the data potentially skewed in any direction?)
-Well, our data was very POLITICAL in that china did not include tibet, so we personally took it upon us to add tibet to the china provinces. In the country_population data from the UN data Taiwan was labeled as Taiwan (province of china), which we felt was not fair for Taiwan, so we changed it to Taiwan. It also made our data have weird edge cases. 
+
+When collecting and cleaning our data, we took into account areas of geopolitical tensions and if/how they were represented in our data. To deal with these complex issues, as a general guiding principle we aimed to be as inclusive as possible, whenever possible.
 
 ### *How clean is the data? Does this data contain what you need in order to complete the project you proposed to do? (Each team will have to go about answering this question differently, but use the following questions as a guide. Graphs and tables are highly encouraged if they allow you to answer these questions more succinctly.)*
 
@@ -40,7 +41,7 @@ we thought were worth noting. They are:
 -Canada (provinces) 2019
 -Tibet 2010
 
-Most of our country tables use solely cities, not provinces, so we may need to account for that somehow. The reason Tibet is because government issues prevent them from showing statistics higher than 2010. 
+Most of our country tables use solely cities, not provinces, so we may need to account for that somehow. The reason for Tibet is that governmental issues prevent them from showing statistics from after 2010. 
 
 #### How many data points are there total? How many are there in each group you care about (e.g. if you are dividing your data into positive/negative examples, are they split evenly)? Do you think this is enough data to do what you hope to do?
 
@@ -60,14 +61,16 @@ There do not appear to be any duplicate values whatsoever, so there is no conseq
 
 #### Are there any data type issues (e.g. words in fields that were supposed to be numeric)? Where are these coming from? (E.g. a bug in your scraper? User input?) How will you fix them?
 
-In the initial Johns Hopkins CSVs, column data for particular states/provinces only exist for China, USA, Australia, and Canada so 
+In the initial Johns Hopkins CSVs, column data for particular states/provinces only exist for China, USA, Australia, and Canada, so the corresponding column was left blank for all other countries. To deal with this, in the SQL database we generated, we appended the row value for province/state with the row value for country/region to generate a complete, unique identifier for each row of data.
 
 There was very little trouble involved in the population data because the websites provided them free in csv format. 
 
 #### Do you need to throw any data away? What data? Why? Any reason this might affect the analyses you are able to run or the conclusions you are able to draw?
 
-First date since dealing with change in numbers per day (and the first day recorded doesn't have any numbers for the day prior, wouldn't make sense to suddently jump from 0 to 4000, etc. because the data repository wasn't constructed the day of the first coronoavirus incidence.
+With regard to the COVID-19 data, we will have to eliminate the very first date (January 22nd, 2020) since we are dealing with change in numbers per day (and the first date recorded doesn't have any numbers for the day prior (it would not make sense to suddently jump from 0 to 4000, for example) because the data repository wasn't constructed the day of the very first coronoavirus incidence back in 2019.
 
 We may need to throw away most of the data in city_country, simply because it contains data on so many cities that aren't in our tables for infection rates. 
 
 ### *Summarize any challenges or observations you have made since collecting your data. Then, discuss your next steps and how your data collection has impacted the type of analysis you will perform. (approximately 3-5 sentences)*
+
+
