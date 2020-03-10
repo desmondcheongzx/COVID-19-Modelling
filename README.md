@@ -25,6 +25,7 @@ As for the population data, The UN is the foremost source on country statistics 
 This project does not really involve any sort of sampling. The data we get (number of infections) pertains to the whole population. In fact, a big part of our data is solely population numbers. 
 
 #### Are there any other considerations you took into account when collecting your data? This is open-ended based on your data; feel free to leave this blank. (Example: If it's user data, is it public/are they consenting to have their data used? Is the data potentially skewed in any direction?)
+Well, our data was very POLITICAL in that china did not include tibet, so we personally took it upon us to add tibet to the china provinces. In the country_population data from the UN data Taiwan was labeled as Taiwan (province of china), which we felt was not fair for Taiwan, so we changed it to Taiwan. It also made our data have weird edge cases. 
 
 ### *How clean is the data? Does this data contain what you need in order to complete the project you proposed to do? (Each team will have to go about answering this question differently, but use the following questions as a guide. Graphs and tables are highly encouraged if they allow you to answer these questions more succinctly.)*
 
