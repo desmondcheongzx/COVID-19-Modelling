@@ -26,7 +26,7 @@ This project does not really involve any sort of sampling. The COVID-19 data we 
 
 #### Are there any other considerations you took into account when collecting your data? This is open-ended based on your data; feel free to leave this blank. (Example: If it's user data, is it public/are they consenting to have their data used? Is the data potentially skewed in any direction?)
 
-When collecting and cleaning our data, we took into account areas of geopolitical tensions and if/how they were represented in our data. To deal with these complex issues, as a general guiding principle we aimed to be as inclusive as possible, whenever possible.
+When collecting and cleaning our data, we took into account areas of geopolitical tensions and if/how they were represented in our data. To deal with these complex issues, as a general guiding principle we aimed to be as inclusive as possible, whenever possible. For example, China did not include Tibet, so we personally took it upon ourselves to add Tibet. In the country_population data from the UN data Taiwan was labeled as Taiwan (Province of China), which we felt was not fair for Taiwan (in addition to it generation some very weird edge cases), so we changed it to just Taiwan.
 
 ### *How clean is the data? Does this data contain what you need in order to complete the project you proposed to do? (Each team will have to go about answering this question differently, but use the following questions as a guide. Graphs and tables are highly encouraged if they allow you to answer these questions more succinctly.)*
 
