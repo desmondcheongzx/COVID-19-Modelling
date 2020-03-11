@@ -1,8 +1,8 @@
-# COVID-19-Modelling
+# COVID-19-Modelling (nrshaida, rmani1, tphilli6, dcheong)
 
 ## Complete Data Specification
 
-Included in project_data directory
+Included in "dataspec" file (in project_data directory)
 
 ## Link to Full Data in Downloadable Form
 
@@ -10,7 +10,8 @@ https://github.com/desmondcheongzx/COVID-19-Modelling
 
 ## Sample Data
 
-Included in sample.db (in project_data directory)
+Included in "sample.db" file (in project_data directory)
+Can utilize http://sqliteonline.com/ for easy visualization of tables as needed.
 
 ## Tech Report
 ### *Where is the data from?*
