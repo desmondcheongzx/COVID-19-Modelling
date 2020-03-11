@@ -1,5 +1,16 @@
 # COVID-19-Modelling
 
+## Complete Data Specification
+
+Included in project_data directory
+
+## Link to Full Data in Downloadable Form
+
+https://github.com/desmondcheongzx/COVID-19-Modelling
+
+## Sample Data
+
+Included in sample.db (in project_data directory)
 
 ## Tech Report
 ### *Where is the data from?*
@@ -27,6 +38,8 @@ This project does not really involve any sort of sampling. The COVID-19 data we 
 #### Are there any other considerations you took into account when collecting your data? This is open-ended based on your data; feel free to leave this blank. (Example: If it's user data, is it public/are they consenting to have their data used? Is the data potentially skewed in any direction?)
 
 When collecting and cleaning our data, we took into account areas of geopolitical tensions and if/how they were represented in our data. To deal with these complex issues, as a general guiding principle we aimed to be as inclusive as possible, whenever possible. For example, China did not include Tibet, so we personally took it upon ourselves to add Tibet. In the country_population data from the UN data Taiwan was labeled as Taiwan (Province of China), which we felt was not fair for Taiwan (in addition to it generation some very weird edge cases), so we changed it to just Taiwan.
+
+Another consideration we had to make was with regard to the accuracy of the number of reported incidences of COVID-19. Although we know our data source is reputable, the numbers reported by the U.S. CDC and those of countries across the globe might not be one hundred percent accurate (due to human error, politics, etc.). Since this is outside of the scope of our project, for the sake of this project, we are assuming that all reported numbers are accurate.
 
 ### *How clean is the data? Does this data contain what you need in order to complete the project you proposed to do? (Each team will have to go about answering this question differently, but use the following questions as a guide. Graphs and tables are highly encouraged if they allow you to answer these questions more succinctly.)*
 
@@ -59,6 +72,8 @@ There do not appear to be any duplicate values whatsoever, so there is no conseq
 
 #### How is the data distributed? Is it uniform or skewed? Are there outliers? What are the min/max values? (focus on the fields that are most relevant to your project goals)
 
+For the most part, our COVID-19 data seems to be normally and uniformly distributed (incidences per day increasing and decreasing roughly along a bell curve). There are some outliers, such as countries that are continuing to face increasing incidences per day (for example, South Korea), but at the end of the day, the data for these countries may end up being uniformly distributed anyways as data continues to accumulate and time goes on. Our maximum values by far are definitely obtained from the Hubei province in China, which serves as the epicenter of the COVID-19 crisis. Our minimum values are obtained from countries/states/provinces that have a single incidence of COVID-19 (since our dataset only includes those countries that have at least one such case). As of March 9th, 2020, these include the country of Brunei, as well as the following U.S. counties: Bennington County, VT; Carver County, MN; Charlotte County, FL; Cherokee County, GA; Collin County, TX; Jefferson County, KY; Jefferson Parish, LA; Shasta County, CA; and Spartanburg County, SC.
+
 #### Are there any data type issues (e.g. words in fields that were supposed to be numeric)? Where are these coming from? (E.g. a bug in your scraper? User input?) How will you fix them?
 
 In the initial Johns Hopkins CSVs, column data for particular states/provinces only exist for China, USA, Australia, and Canada, so the corresponding column was left blank for all other countries. To deal with this, in the SQL database we generated, we appended the row value for province/state with the row value for country/region to generate a complete, unique identifier for each row of data.
@@ -73,4 +88,4 @@ We may need to throw away most of the data in city_country, simply because it co
 
 ### *Summarize any challenges or observations you have made since collecting your data. Then, discuss your next steps and how your data collection has impacted the type of analysis you will perform. (approximately 3-5 sentences)*
 
-
+Some of the challenges we anticipate as a result of our data are due to the fact that there are differences in country/state/province names across tables, as our COVID-19 database is obtained from a completely separate data source than our population database. Additionally, we anticipate some issues that may arise due to the fact that some row identifiers are represented by country, some by state, some by province, and some by city so we will have to determine a way to normalize these representations. We also realize that we will have to be flexible in our upcoming statistical analysis, since data is continuously being updated and added each and every day, meaning that conclusions we make at one point in time may not be relevant at another, for instance. Data collection has significantly impacted the type of analysis we will perform, since we were unable to find free/cheap and comprehensive travel data, thus prohibiting us from testing for the correlation between global travel and rate of COVID-19 spread.
